@@ -1,8 +1,11 @@
-The reason behind most unsuccessful applications
+C# Design Principle - SOLID
+
+# The reason behind most unsuccessful applications
 
 Developers start building applications with good and tidy designs using their knowledge and experience. But over time, applications might develop bugs. The application design must be altered for every change request or new feature request. After some time we might need to put in a lot of effort, even for simple tasks and it might require full working knowledge of the entire system. But we can't blame change or new feature requests. They are part of software development. We can't stop them or refuse them either. So who is the culprit here? Obviously it is the design of the application.
 
-Problem: The following are the design flaws that cause damage in software, mostly.
+# Problem: 
+The following are the design flaws that cause damage in software, mostly.
 
 1. Putting more stress on classes by assigning more responsibilities to them. (A lot of functionality not related to a class.)
 
@@ -10,7 +13,7 @@ Problem: The following are the design flaws that cause damage in software, mostl
 
 3. Spreading duplicate code in the system/application.
 
-Solution:
+# Solution:
 
 1. Choosing the correct architecture (in other words MVC, 3-tier, Layered, MVP, MVVP and so on).
 
@@ -18,7 +21,7 @@ Solution:
 
 3. Choosing correct Design Patterns to build the software based on its specifications.
 
-SOLID stands for
+# SOLID stands for
 
 S - Single Responsible Principle (SRP).
 
@@ -34,7 +37,7 @@ Michael Feathers introduced the SOLID acronym in the year 2000. SOLID is a desig
 
 Robert C Martin has promoted SOLID Principles and now it’s very famous. It has changed the development approach and dominated in software development industries.
 
-Benefits of SOLID
+# Benefits of SOLID
 
 1. It makes software design more understandable, flexible, and maintainable
 
@@ -50,16 +53,17 @@ Benefits of SOLID
 
 7. Maintainability – Large Systems or Growing systems become complicated and difficult to maintain. This Principle helps us to create a maintainable system. A maintainable system is very important in industries.
 
-Single Responsible Principle (SRP)
+# Single Responsible Principle (SRP)
 
 A class should have ONE and ONLY ONE reason to change
 
-enter image description here
+![image](https://github.com/psangrama/Solid-Design-Principle/assets/113549457/e1b586c2-482a-4dbe-8c09-6e8191487f89)
+
 EmployeeService has no relationship with email. This is a bad design.
 
 Where the right design to have separate classes for both EmployeeService and EmailService, as they carries single responsibility as their name suggests.
 
-Open/Closed Principle(OCP)
+# Open/Closed Principle(OCP)
 
 Class should be open for extension and closed for modification.
 
@@ -67,9 +71,9 @@ Class should be open for extension and closed for modification.
 
 2. Close for Modification – Instead of changing the base class, we will extend the base class and add/modify type-specific coding in the derived class.
 
-enter image description here
+![image](https://github.com/psangrama/Solid-Design-Principle/assets/113549457/2864519c-70e8-4285-9789-0b6576af2559)
 
-Liskov Substitute Principle (LSP)
+#Liskov Substitute Principle (LSP)
 
 Subtypes must be substitutable for their base class.
 
@@ -77,26 +81,28 @@ We should not be using inheritance only just to avoid few lines of code in the c
 
 Here in this example, PermanentEmployee is the base class and ContractEmployee is the child class i.e. there is a Parent-Child relationship. So, we can store the child class object in the Parent Reference variable i.e. PermanentEmployee employee = new ContractEmployee(); and when we call the GetLeaves i.e. employee.GetColor(), then we are getting the leaves of ContractEmployee which is not right.
 
-enter image description here
-Interface Segregation Principle (ISP)
+![image](https://github.com/psangrama/Solid-Design-Principle/assets/113549457/535af826-7749-4157-bfb9-f6fd0d5c6a4e)
+
+# Interface Segregation Principle (ISP)
 
 The dependency of one class to another one should depend on the smallest possible interface. - Clients should not be forced to implement interfaces they don't use Instead of one fat interface many smaller interfaces are preferred based on groups of methods, each one serving one sub module.
 
 Here in the example below, we can groom dog but can't groom tiger. But has to have a dummy implementation for the compiler to be happy. Rather the good implementation is to segregate the interface into multiple interfaces like Animal and PetAnimal, so dog can implement PetAnimal and Tiger can implement Animal.
 
-enter image description here
+![image](https://github.com/psangrama/Solid-Design-Principle/assets/113549457/2dd7870e-0695-4a5e-9abf-bb9503748319)
 
-Dependency Inversion Principle:
+
+# Dependency Inversion Principle:
 
 The principle of dependency inversion refers to the decoupling of software modules. This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.
 
 Other words, depend upon abstractions(interfaces) not upon concrete classes. Secondly, an abstraction must not depend upon details, but the details must depend upon abstractions.
 
-enter image description here
+![image](https://github.com/psangrama/Solid-Design-Principle/assets/113549457/fcdea506-ade0-4e28-8b42-6fb6c7847a82)
 
 Other design principles to keep in mind while designing any software application:
 
-Inversion of Control (IoC):
+# Inversion of Control (IoC):
 
 The main objective of Inversion of Control (IoC) in C# is to remove the dependencies (remove tight coupling) between the objects of an application which makes the application more decoupled and maintainable.
 
@@ -114,8 +120,8 @@ There are different IoC Containers available for .NET such as Unity, Ninject, St
 
 Dependency Injection can be achieved using
 
-Property Injection
+1. Property Injection
 
-Method Injection
+2. Method Injection
 
-Constructor Injection
+3. Constructor Injection
